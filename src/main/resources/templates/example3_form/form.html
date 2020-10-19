@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+</head>
+<body>
+    <form action="#" th:action="@{/example3_form/addPersona}" th:object="${persona}" method="post">
+        <p>Nombre<input type="text" th:field="*{nombre}"></p>
+        <p>Edad <input type="number" th:field="*{edad}"></p>
+        <p> <input type="submit" value="Guardar"></p>
+
+    </form>
+</body>
+</html>

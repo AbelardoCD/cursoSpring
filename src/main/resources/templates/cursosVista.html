@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Precio</th>
+        <th>Hora</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="curso: ${listarCursos}">
+        <td th:text="${curso.nombre}"></td>
+        <td th:text="${curso.descripcion}"></td>
+        <td th:text="${curso.precio}"></td>
+        <td th:text="${curso.hora}"></td>
+
+    </tr>
+    </tbody>
+</table>
+
+<form action="#" th:action="@{/cursos/addcurso}" th:object="${curso}" method="post">
+    <p>Nombre<input type="text" th:field="*{nombre}"></p>
+    <p>Descripcion <input type="text" th:field="*{descripcion}"></p>
+    <p>Precio <input type="number" th:field="*{precio}"></p>
+    <p>Horas <input type="number" th:field="*{hora}"></p>
+
+    <p> <input type="submit" value="Guardar"></p>
+
+</form>
+</body>
+</html>
